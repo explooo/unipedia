@@ -11,6 +11,7 @@ environment:
 
 dependencies:
   carousel_slider: ^4.0.0
+  fancy_containers: ^0.0.1
   flutter:
     sdk: flutter
   flutter_localizations:
