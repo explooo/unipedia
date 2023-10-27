@@ -5,13 +5,10 @@ class Study extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       
       body: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: const Text('Go Back'),
-        ),
+        
       ),
     );
   }

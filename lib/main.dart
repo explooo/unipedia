@@ -27,16 +27,16 @@ class _MyAppState extends State<MyApp> {
   Scaffold MyAppBar() {
     return Scaffold(
       appBar: AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Color(0xFF47A9A5),
 
       elevation: 0,
       centerTitle: true,
       title: const Text(
         'unipedia',
         style: TextStyle(
-          fontSize: 18,
+          fontSize: 26,
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: Color(0xFFFDFFFF)
           
         ),
       ),
@@ -48,13 +48,14 @@ class _MyAppState extends State<MyApp> {
       moreScreen(title: 'More')][selectedPageIndex],
     
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Color(0xFFD1F8F7),
         selectedIndex: selectedPageIndex,
         onDestinationSelected: (int index) {
           setState(() {
             selectedPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber[800],
+        indicatorColor: Color('A0E7E5'.hashCode),
         destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.home),

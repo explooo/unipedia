@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unipedia/main.dart';
 import 'package:unipedia/pages/home.dart';
 
 
@@ -16,7 +17,7 @@ class eventsScreen extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => const MyApp()),
                 );
               },
               child: Container(
