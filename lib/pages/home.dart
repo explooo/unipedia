@@ -8,7 +8,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD1F8F7),
+      appBar: AppBar(
+            backgroundColor: const Color(0xFF47A9A5),
+            elevation: 0,
+            centerTitle: true,
+            title: const Text(
+              'unipedia',
+              style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFFDFFFF)),
+            ),
+          ),
+      backgroundColor: const Color(0xFFD1F8F7),
       body:SingleChildScrollView(
           child: Column(
             children: [
@@ -60,14 +72,14 @@ Widget codesSeniorConnect(BuildContext context) {
             },
             child: Container(
                 decoration: BoxDecoration(
-              color: Color(0xFF47A9A5),
+              color: const Color(0xFF47A9A5),
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
             ),
@@ -106,14 +118,14 @@ Widget codesSeniorConnect(BuildContext context) {
             },
             child: Container(
                 decoration: BoxDecoration(
-              color: Color(0xFF47A9A5),
+              color: const Color(0xFF47A9A5),
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
             ),
@@ -161,14 +173,14 @@ Widget notesAcessPapers(BuildContext context) {
             },
             child:  Container(
                 decoration: BoxDecoration(
-              color: Color(0xFF47A9A5),
+              color: const Color(0xFF47A9A5),
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
             ),
@@ -205,14 +217,14 @@ Widget notesAcessPapers(BuildContext context) {
             },
             child:  Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(const Radius.circular(15)),
-                  color: Color(0xFF47A9A5),
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  color: const Color(0xFF47A9A5),
                   boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),]
                   
                 ),
@@ -268,7 +280,7 @@ Widget notesAcessPapers(BuildContext context) {
           width: 500,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Color(0xFF47A9A5),
+            color: const Color(0xFF47A9A5),
           ),
           
             child: Column(
@@ -299,7 +311,7 @@ Widget notesAcessPapers(BuildContext context) {
           width: 500,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Color(0xFF47A9A5),
+            color: const Color(0xFF47A9A5),
           ),
           
             child: Column(
@@ -330,7 +342,7 @@ Widget notesAcessPapers(BuildContext context) {
           width: 500,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Color(0xFF47A9A5),
+            color: const Color(0xFF47A9A5),
           ),
           
             child: Column(

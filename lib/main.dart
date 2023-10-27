@@ -18,68 +18,53 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Poppins'),
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        useMaterial3: true,
+      ),
       debugShowCheckedModeBanner: false,
-      home: MyAppBar(),
-    );
-  }
-
-  Scaffold MyAppBar() {
-    return Scaffold(
-      appBar: AppBar(
-      backgroundColor: Color(0xFF47A9A5),
-
-      elevation: 0,
-      centerTitle: true,
-      title: const Text(
-        'unipedia',
-        style: TextStyle(
-          fontSize: 26,
-          fontWeight: FontWeight.bold,
-          color: Color(0xFFFDFFFF)
+      home: Scaffold(
           
-        ),
-      ),
-    ),
-      body: 
-      const [HomePage(),
-      Study(title: 'hello',),
-      eventsScreen(title: "Events"),
-      moreScreen(title: 'More')][selectedPageIndex],
-    
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFFD1F8F7),
-        selectedIndex: selectedPageIndex,
-        onDestinationSelected: (int index) {
-          setState(() {
-            selectedPageIndex = index;
-          });
-        },
-        indicatorColor: Color('A0E7E5'.hashCode),
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-              icon: Icon(Icons.notes),
-              label: 'Notes',
-              
-          ),
-              
-          NavigationDestination(
-            selectedIcon: Icon(Icons.event),
-            icon: Icon(Icons.event_note_outlined),
-            label: 'Events',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.more_horiz),
-            label: 'More',
-          ),
-        ],
-      ),
-     
+          body: const [
+            HomePage(),
+            Study(
+              title: 'hello',
+            ),
+            eventsScreen(title: "Events"),
+            moreScreen(title: 'More')
+          ][selectedPageIndex],
+          bottomNavigationBar: NavigationBar(
+            backgroundColor: const Color(0xFFD1F8F7),
+            selectedIndex: selectedPageIndex,
+            onDestinationSelected: (int index) {
+              setState(() {
+                selectedPageIndex = index;
+              });
+            },
+            indicatorColor: Color('A0E7E5'.hashCode),
+            destinations: const <Widget>[
+              NavigationDestination(
+                selectedIcon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.notes),
+                label: 'Notes',
+              ),
+              NavigationDestination(
+                selectedIcon: Icon(Icons.event),
+                icon: Icon(Icons.event_note_outlined),
+                label: 'Events',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.more_horiz),
+                label: 'More',
+              ),
+            ],
+          )),
     );
   }
+
+  // ignore: non_constant_identifier_names
 }
