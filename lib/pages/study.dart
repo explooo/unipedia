@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unipedia/pages/placements.dart';
+import 'package:unipedia/pages/ChemStudyMaterial.dart';
+
 class Study extends StatelessWidget {
   const Study({Key? key}) : super(key: key);
 
@@ -8,10 +10,17 @@ class Study extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Study'),
-        centerTitle: true,
-        backgroundColor: const Color(0xFF71CDCA),
-      ),
+            backgroundColor: const Color(0xFF47A9A5),
+            elevation: 0,
+            centerTitle: true,
+            title: const Text(
+              'unipedia',
+              style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFFDFFFF)),
+            ),
+          ),
       backgroundColor: const Color(0xFFD1F8F7),
       body: SingleChildScrollView(
         child: Column(
@@ -56,7 +65,12 @@ class Study extends StatelessWidget {
               ListTile(
                 title: const Text('Study Material'),
                 onTap: () {
-                  // Handle Study Material option
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ChemStudyMaterial(),
+                      ),
+                    );
                 },
               ),
               ListTile(

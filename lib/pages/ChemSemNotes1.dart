@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PlacementsScreen extends StatelessWidget {
-  const PlacementsScreen({super.key});
+class ChemSem1Notes extends StatelessWidget {
+  const ChemSem1Notes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,17 +20,26 @@ class PlacementsScreen extends StatelessWidget {
             ),
           ),
           backgroundColor: const Color(0xFFD1F8F7),
-          body:SingleChildScrollView (
-             child:Column(
-              children: [
-                myPadding(),
-                
-              ],
-             )
-
-          ),
-    );
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          myPadding(),
+          SelectYourContent(),
+        ],))
+          );
     
   }
-  SizedBox myPadding() => const SizedBox(height: 16.0);
-}
+  Padding SelectYourContent() {
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Text(
+        'Select Your Content',
+        style: TextStyle(
+          fontSize: 26.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+SizedBox myPadding() => const SizedBox(height: 16.0);
+  }
