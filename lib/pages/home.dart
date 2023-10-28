@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
             backgroundColor: const Color(0xFF47A9A5),
             elevation: 0,
@@ -21,7 +22,9 @@ class HomePage extends StatelessWidget {
             ),
           ),
       backgroundColor: const Color(0xFFD1F8F7),
-      body:SingleChildScrollView(
+      body:
+      
+      SingleChildScrollView(
           child: Column(
             children: [
               myPadding(),
@@ -38,6 +41,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        
       
   
     );

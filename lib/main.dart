@@ -25,45 +25,54 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           
-          body: const [
-            HomePage(),
-            Study(
-              title: 'hello',
-            ),
-            eventsScreen(title: "Events"),
-            moreScreen(title: 'More')
-          ][selectedPageIndex],
-          bottomNavigationBar: NavigationBar(
-            backgroundColor: const Color(0xFFD1F8F7),
-            selectedIndex: selectedPageIndex,
-            onDestinationSelected: (int index) {
-              setState(() {
-                selectedPageIndex = index;
-              });
-            },
-            indicatorColor: Color('A0E7E5'.hashCode),
-            destinations: const <Widget>[
-              NavigationDestination(
-                selectedIcon: Icon(Icons.home),
-                icon: Icon(Icons.home_outlined),
-                label: 'Home',
-              ),
-              NavigationDestination(
-                icon: Icon(Icons.notes),
-                label: 'Notes',
-              ),
-              NavigationDestination(
-                selectedIcon: Icon(Icons.event),
-                icon: Icon(Icons.event_note_outlined),
-                label: 'Events',
-              ),
-              NavigationDestination(
-                icon: Icon(Icons.more_horiz),
-                label: 'More',
-              ),
-            ],
-          )),
+          body: SelectedIndexPage[selectedPageIndex],
+          bottomNavigationBar: MyNavBar()
+          ),
     );
+  }
+
+  NavigationBar MyNavBar() {
+    return NavigationBar(
+          backgroundColor: const Color(0xFFD1F8F7),
+          selectedIndex: selectedPageIndex,
+          onDestinationSelected: (int index) {
+            setState(() {
+              selectedPageIndex = index;
+            });
+          },
+          indicatorColor: Color('A0E7E5'.hashCode),
+          destinations: const <Widget>[
+            NavigationDestination(
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.notes),
+              label: 'Notes',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.event),
+              icon: Icon(Icons.event_note_outlined),
+              label: 'Events',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.more_horiz),
+              label: 'More',
+            ),
+          ],
+        );
+  }
+
+  List<StatelessWidget> get SelectedIndexPage {
+    return const [
+          HomePage(),
+          Study(
+           
+          ),
+          eventsScreen(title: "Events"),
+          moreScreen(title: 'More')
+        ];
   }
 
   // ignore: non_constant_identifier_names
