@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unipedia/pages/events.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:unipedia/pages/codes_screen.dart';
 class ChemSem1Notes extends StatelessWidget {
   const ChemSem1Notes({super.key});
 
@@ -33,8 +34,33 @@ class ChemSem1Notes extends StatelessWidget {
             myPadding(),
             SelectYourContent(),
             myPadding(),
-            NotesCard(),
-            CodesCard(),
+            // NotesCard(),
+            GestureDetector(
+      onTap: ()  {
+                Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CodesScreen()),
+          );
+              },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: 124.0,
+          child: Card(
+            child: Center(
+              child: ListTile(
+                title: Text('Codes'),
+                trailing: SvgPicture.asset(
+                  'assets/images/notes.svg',
+                  height: 32.0,
+                  width: 32.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
             PyqCard(),
             SolutionsCard(),
             myPadding(),
@@ -42,7 +68,7 @@ class ChemSem1Notes extends StatelessWidget {
         )));
   }
 
-  GestureDetector NotesCard() {
+  GestureDetector NotessCard() {
     return GestureDetector(
       onTap: () async {
                 const url = 'https://example.com';
@@ -75,13 +101,8 @@ class ChemSem1Notes extends StatelessWidget {
 
   GestureDetector CodesCard() {
     return GestureDetector(
-      onTap: () async {
-                const url = 'https://example.com';
-                if (await canLaunch(url)) {
-                  await launch(url);
-                } else {
-                  throw 'Could not launch $url';
-                }
+      onTap: ()  {
+                
               },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
