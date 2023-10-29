@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unipedia/pages/home.dart';
 import 'package:unipedia/pages/ChemSemNotes1.dart';
+import 'package:unipedia/pages/ChemSemNotes3.dart';
 class ChemStudyMaterial extends StatelessWidget {
   const ChemStudyMaterial({super.key});
 
@@ -9,7 +10,7 @@ class ChemStudyMaterial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF47A9A5),
+        backgroundColor: const Color(0XFFA233C5),
         elevation: 0,
         centerTitle: true,
         title: const Text(
@@ -19,35 +20,53 @@ class ChemStudyMaterial extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Color(0xFFFDFFFF)),
         ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white,),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
       ),
-      backgroundColor: const Color(0xFFD1F8F7),
+      // backgroundColor: const Color(0xFFD1F8F7),
       body: SingleChildScrollView(
           child: Column(
         children: [
           myPadding(),
-          SelectSemText(),
-          myPadding(),
-          const Semester1(),
-          myPadding(),
-          const Semester2(),
-          myPadding(),
-          const Semester3(),
-          myPadding(),
-          const Semester4(),
-          myPadding(),
-          const Semester5(),
-          myPadding(),
-          const Semester6(),
-          myPadding(),
-          const Semester7(),
-          myPadding(),
-          const Semester8(),
-          myPadding(),
-          const Semester9(),
-          myPadding(),
-          const Semester10(),
-          myPadding(),
-
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.0),
+                    color: Color(0XFFA233C5)
+              ),
+              child: Column(
+                children: [
+                  SelectSemText(),
+                  myPadding(),
+                  const Semester1(),
+                  myPadding(),
+                  const Semester2(),
+                  myPadding(),
+                  const Semester3(),
+                  myPadding(),
+                  const Semester4(),
+                  myPadding(),
+                  const Semester5(),
+                  myPadding(),
+                  const Semester6(),
+                  myPadding(),
+                  const Semester7(),
+                  myPadding(),
+                  const Semester8(),
+                  myPadding(),
+                  const Semester9(),
+                  myPadding(),
+                  const Semester10(),
+                  myPadding(),
+                ],
+              ),
+            ),
+          ),
         ],
       )),
     );
@@ -59,6 +78,7 @@ class ChemStudyMaterial extends StatelessWidget {
       child: Text(
         'Select You Semester',
         style: TextStyle(
+          color: Colors.white,
           fontSize: 26.0,
           fontWeight: FontWeight.bold,
         ),
@@ -87,13 +107,16 @@ class Semester1 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 1'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 1', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )
+            ),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -120,13 +143,15 @@ class Semester2 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 2'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 2', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -148,18 +173,20 @@ class Semester3 extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const HomePage()),
+            MaterialPageRoute(builder: (context) => const ChemSem3Notes()),
           );
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 3'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 3', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -186,13 +213,15 @@ class Semester4 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 4'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 4', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -219,13 +248,15 @@ class Semester5 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 5'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 5', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -252,13 +283,15 @@ class Semester6 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 6'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 6', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -285,13 +318,15 @@ class Semester7 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 7'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 7', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -317,13 +352,15 @@ class Semester8 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 8'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 8', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -350,13 +387,15 @@ class Semester9 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 9'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 9', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),
@@ -382,13 +421,15 @@ class Semester10 extends StatelessWidget {
         },
         child: Material(
           borderRadius: BorderRadius.circular(10.0),
-          color: const Color(0xFF47A9A5),
+          color: const Color(0XFFD07AEB),
           child: ListTile(
-            title: const Text('Semester 10'),
-            trailing: SvgPicture.asset(
-              'assets/images/notes.svg',
-              height: 32.0,
-              width: 32.0,
+            title: const Text('Semester 10', style: TextStyle(
+                      color: Color(0xFFFDFFFF),
+                      fontWeight: FontWeight.w500
+                    )),
+            trailing: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white, // Set the color of the icon
             ),
           ),
         ),

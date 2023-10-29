@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 class moreScreen extends StatelessWidget {
   const moreScreen({Key? key, required this.title}) : super(key: key);

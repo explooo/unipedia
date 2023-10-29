@@ -33,14 +33,14 @@ class _MyAppState extends State<MyApp> {
 
   NavigationBar MyNavBar() {
     return NavigationBar(
-          backgroundColor: const Color(0xFFD1F8F7),
+          backgroundColor: const Color(0xFFF6E0FD),
           selectedIndex: selectedPageIndex,
           onDestinationSelected: (int index) {
             setState(() {
               selectedPageIndex = index;
             });
           },
-          indicatorColor: Color('A0E7E5'.hashCode),
+          indicatorColor: Color('A233C5'.hashCode),
           destinations: const <Widget>[
             NavigationDestination(
               selectedIcon: Icon(Icons.home),
