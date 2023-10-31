@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:unipedia/pages/events.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:unipedia/pages/signin.dart';
+FirebaseAnalytics analytics = FirebaseAnalytics.instance;
 class HomePage extends StatelessWidget {
   const HomePage({Key? key});
 
@@ -50,7 +53,36 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            eventsText()
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.0),
+                  color: const Color(0XFFA233C5),
+                ),
+                child: Column(
+                  children: [
+                    myPadding(),
+                    EventsText(),
+                    myPadding(),
+                    HackathonCheeks(context),
+                    myPadding(),
+                    polaris(context) ,
+                    myPadding(),
+                    myPadding(),
+                    ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SignUpScreen()),
+    );
+  },
+  child: Text('Go to Sign Up'),
+)
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -85,15 +117,15 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Padding eventsText() {
+  Padding EventsText() {
     return const Padding(
       padding: EdgeInsets.all(16.0),
       child: Text(
         'Events',
         style: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-        ),
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFFFFFFF)),
       ),
     );
   }
@@ -300,6 +332,213 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+Widget HackathonCheeks(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const eventsScreen(
+                          title: 'g',
+                        )),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0XFFD07AEB),
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Container(
+                width: 140.0,
+                height: 140.0,
+                child: Column(
+                  children: [
+                    myPadding(),
+                    SvgPicture.asset(
+                      'assets/images/notes.svg',
+                      width: 75.0,
+                      height: 75.0,
+                    ),
+                    const SizedBox(height: 20.0),
+                    const Text(
+                      'Hackathon',
+                      style:
+                          TextStyle(fontSize: 16.0, color: Color(0xFFFDFFFF)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const eventsScreen(
+                          title: 'h',
+                        )),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  color: const Color(0XFFD07AEB),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ]),
+
+              // ignore: sized_box_for_whitespace
+              child: Container(
+                width: 140.0,
+                height: 140.0,
+                child: Column(
+                  children: [
+                    myPadding(),
+                    SvgPicture.asset(
+                      'assets/images/access_papers.svg',
+                      width: 75.0,
+                      height: 75.0,
+                    ),
+                    const SizedBox(height: 20.0),
+                    const Text(
+                      'Che.eks',
+                      style:
+                          TextStyle(fontSize: 16.0, color: Color(0xFFFDFFFF)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+Widget polaris(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const eventsScreen(
+                          title: 'g',
+                        )),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0XFFD07AEB),
+                borderRadius: BorderRadius.circular(10.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: const Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Container(
+                width: 140.0,
+                height: 140.0,
+                child: Column(
+                  children: [
+                    myPadding(),
+                    SvgPicture.asset(
+                      'assets/images/cet_icon.svg',
+                      width: 75.0,
+                      height: 75.0,
+                    ),
+                    const SizedBox(height: 20.0),
+                    const Text(
+                      'Polaris',
+                      style:
+                          TextStyle(fontSize: 16.0, color: Color(0xFFFDFFFF)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const eventsScreen(
+                          title: 'h',
+                        )),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  color: const Color(0XFFD07AEB),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ]),
+
+              // ignore: sized_box_for_whitespace
+              child: Container(
+                width: 140.0,
+                height: 140.0,
+                child: Column(
+                  children: [
+                    myPadding(),
+                    SvgPicture.asset(
+                      'assets/images/agri_icon.svg',
+                      width: 75.0,
+                      height: 75.0,
+                    ),
+                    const SizedBox(height: 20.0),
+                    const Text(
+                      'Techayon',
+                      style:
+                          TextStyle(fontSize: 16.0, color: Color(0xFFFDFFFF)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+
+
 
   Padding StudyToolsText() {
     return const Padding(

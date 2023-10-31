@@ -2,9 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:unipedia/pages/events.dart';
 import 'package:unipedia/pages/home.dart';
 import 'package:unipedia/pages/more.dart';
+import 'package:firebase_core/firebase_core.dart';
+import '/src/firebase_options.dart';
 import 'package:unipedia/pages/study.dart';
-
-void main() => runApp(const MyApp());
+// import 'package:unipedia/pages/firebase_options.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
